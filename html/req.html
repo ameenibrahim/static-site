@@ -5,9 +5,10 @@
 	  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	  <title>AWS Solution Architect's Journey</title>
 	  <link rel="stylesheet" type="text/css" href="css/style-page.css">
+		<script type="text/javascript" src="js/nav.js"></script>
 	</head>
-	
-	<body>
+
+	<body onload="injectNav(2);">
 	  <div id="wrapper">
 	  <div style="background-color:#24292e; height:60px;">
 	  <img style="width:60px;padding-left:15px;" src="https://media.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAAypAAAAJGM4OTdjMGI2LTU5MDUtNDJkOS1iYWRlLWZlNmRhZWIyYTM2Yw.jpg"></img>
@@ -82,28 +83,7 @@ Please Note: Ensure that you leave your solution up and running and available in
 		  </div>
 		</main>
 		
-		<nav id="nav">
-		  <div class="innertube">
-			<h3>Requirements</h3>
-			<ul>
-			  <li><a href="index.html">Home</a></li>
-			  <li style="background-color:#D3D3D3"><a href="#">Req Doc</a></li>
-			</ul>
-			<h3>Infra Design</h3>
-			<ul>
-			  <li><a href="vpc.html">VPC Layout</a></li>
-			  <li><a href="instance.html">Instances Layout</a></li>
-			  <li><a href="network.html">Network Map</a></li>
-			</ul>
-			<h3>Solution</h3>
-			<ul>
-			  <li><a href="ansible.html">1. CFN + Ansible</a></li>
-			  <li><a href="cfn.html">2. CFN + Bootstrap</a></li>
-			  <li><a href="eb.html">3. Elastic Beanstalk</a></li>
-			  <li><a href="codedeploy.html">4. CFN + Code Deploy</a></li>
-			</ul>
-		  </div>
-		</nav>
+		<div id="nav-id"></div> 
 		
 	  </div>
 	</body>
