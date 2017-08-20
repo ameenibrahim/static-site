@@ -9,82 +9,78 @@
 	</head>
 
 	<body onload="injectNav(2);">
-	  <div id="wrapper">
-	  <div style="background-color:#24292e; height:60px;">
-	  <img style="width:60px;padding-left:15px;" src="https://media.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAAypAAAAJGM4OTdjMGI2LTU5MDUtNDJkOS1iYWRlLWZlNmRhZWIyYTM2Yw.jpg"></img>
-	  <span class="headSpan">AWS Solution Architect's Journey</span>
-	  <div>
-		<main>
-		  <div id="content">
-			<div class="innertube">
-			  
-			  
-			  <br>
-			  <h2>Hello AWS World – running on <Server_Type> – on port 80</h2>
-			  
-			  <div style="margin-left:30px;width:80%; text-align:justify">
-			  <h2>Objective</h2>
-At the end of this assignment you will have created a web site using the following Amazon Web Services: EC2, EBS, ELB and S3.
-You will have created an Elastic-Load-Balancer, a Linux server running Apache, a Windows server running IIS. Both the Apache and IIS servers will have websites running on ports 80 (A total of 2 different web pages).<br>
-The Elastic-Load-Balancer will distribute traffic to the Linux and Windows servers in a round-robin fashion. This means that requests to the Elastic-Load-Balancer on port 80 will get re-directed to the Apache and IIS web servers listening on port 80. 
-
-<h2>Stage 1: Building the EC2 web server and Elastic Load Balancer.</h2>
-Launch 2 EC2 instances – one Linux and one Windows, to meet the following objectives:<br>
-•	The instances should be of type t2.micro<br>
-•	The instances Linux instance should reside within region ap-southeast-1 within availability zone ap-southeast-1a & Windows instance should reside in availability zone ap-southeast-1b<br>
-•	Each instances should use a 1 GiB attached EBS volume and contain valid partition tables with one partition. The partition should contain a valid file system<br>
-•	The file system residing on the EBS volumes should be mounted automatically upon reboot of the EC2 instances<br>
-•	The instances should serve web pages via appropriate services such as Apache (on Linux) and IIS (on Windows). These services should start automatically upon boot<br>
-•	Both the Apache and IIS web servers should be configured to run different web sites on ports 80<br>
-
-
-•	The instances should serve a web page “index.html” containing well-formed HTML displaying the text "Hello AWS World – running on Linux – on port 80"  on Linux and on Windows “Hello AWS World –running on Windows - on port 80” Each webpage will display the respective screenshots created below in Stage 3 (they will be hosted separately). The HTML files should reside on the file system within the previously created EBS volume and be served as the default document from the web server root<br>
-•	The instance should use Security Groups effectively to allow administration and serve HTTP<br>
-
-
-<h2>Stage 2: Configuring the Elastic Load Balancer</h2>
-Create an Elastic-Load-Balancer (ELB) with the following specification:<br>
-•	The ELB should be created in the Singapore region.<br>
-•	The ELB should accept connections on ports 80<br>
-•	The Healthy Threshold for the ELB to be set to 2<br>
-•	Deliver traffic to the EC2 instances created in Stage 1 – i.e. both the Linux and Windows servers will be registered to this Elastic Load Balancer. Requests on load balancer would be load balanced on Linux & Windows servers. <br>
-
-
-
-<h2>Stage 3: Configuring S3</h2>
-Create a Simple Storage Service (S3) bucket with the following specification:<br>
-•	The bucket should be created in the Singapore region.<br>
-•	The bucket should be publicly readable.
-<br><br>
-Capture the screenshots for both Windows & Linux. Place the screen shots in S3 bucket in png format, clearly showing the following:<br>
-1.	The mounted EBS volume e.g. using Windows Explorer on the Windows host or run "df" from the console on the Linux host. These screen shot should be named as screen-shot1 <br>
-<br>
-2.	The index.html file residing within the EBS e.g. using windows explorer or run "pwd; ls -l" from the terminal on a Linux host. This screen shot should be named as screen-shot2<br>
-<br>
-3.	The web server has been configured to serve index.html from the EBS volume as the default document e.g. the relevant section of the Apache configuration file and IIS Manager. This screen shot should be named as screen-shot3<br>
-<br>
-Remember to use the S3 URLs in the index.html file hosted on EC2 (see Stage 1). <br>
-<br>
-Optional: if you choose to extend the solution with CloudFront then use CloudFront URLs.<br>
-
-
-
-<h2>Key Deliverables</h2>
-Please provide the following information to the AWS Recruitment team:<br>
-•	The public DNS entries for the EC2 instances<br>
-•	The public URL to the web page via the ELB<br>
-•	Your AWS account ID that is being used to set up this assignment<br>
-<br>
-P.S: Candidates are encouraged to be innovative in delivering the solution. Example use of bootstrap, auto scaling, or usage of orchestration tools like chef would be nice.<br>
-<br>
-Please Note: Ensure that you leave your solution up and running and available in order for it to be evaluated. This should occur within two business days of submitting your assignment. Upon receiving feedback from the Recruitment Team, you should terminate and delete all resources you used for the assignment so as to avoid any unnecessary charges.<br>
+		<div id="wrapper">
+			<div style="background-color:#24292e; height:60px;">
+				<div style="padding-left:15px;float:left;"><img style="width:60px;" src="https://media.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAAypAAAAJGM4OTdjMGI2LTU5MDUtNDJkOS1iYWRlLWZlNmRhZWIyYTM2Yw.jpg"></div>
+				<div class="headSpan"> AWS Solution Architect's Journey </div>
+				<div style="padding-left:950px;float:left; padding-top:3px;"><img style="width:54px;" src="<Server_Type>.png"></div>
 			</div>
-			</div>
-		  </div>
-		</main>
-		
-		<div id="nav-id"></div> 
-		
-	  </div>
+			<main>
+				<div id="content">
+					<div class="innertube">
+						<br>
+						<h2>Hello AWS World – running on <Server_Type> – on port 80</h2>
+						
+						<div style="margin-left:30px;width:80%; text-align:justify">
+						<h2>Objective</h2>
+							At the end of this assignment you will have created a web site using the following Amazon Web Services: EC2, EBS, ELB and S3.
+							You will have created an Elastic-Load-Balancer, a Linux server running Apache, a Windows server running IIS. Both the Apache and IIS servers will have websites running on ports 80 (A total of 2 different web pages).<br>
+							The Elastic-Load-Balancer will distribute traffic to the Linux and Windows servers in a round-robin fashion. This means that requests to the Elastic-Load-Balancer on port 80 will get re-directed to the Apache and IIS web servers listening on port 80. 
+
+							<h2>Stage 1: Building the EC2 web server and Elastic Load Balancer.</h2>
+							Launch 2 EC2 instances – one Linux and one Windows, to meet the following objectives:<br>
+							•	The instances should be of type t2.micro<br>
+							•	The instances Linux instance should reside within region ap-southeast-1 within availability zone ap-southeast-1a & Windows instance should reside in availability zone ap-southeast-1b<br>
+							•	Each instances should use a 1 GiB attached EBS volume and contain valid partition tables with one partition. The partition should contain a valid file system<br>
+							•	The file system residing on the EBS volumes should be mounted automatically upon reboot of the EC2 instances<br>
+							•	The instances should serve web pages via appropriate services such as Apache (on Linux) and IIS (on Windows). These services should start automatically upon boot<br>
+							•	Both the Apache and IIS web servers should be configured to run different web sites on ports 80<br>
+
+
+							•	The instances should serve a web page “index.html” containing well-formed HTML displaying the text "Hello AWS World – running on Linux – on port 80"  on Linux and on Windows “Hello AWS World –running on Windows - on port 80” Each webpage will display the respective screenshots created below in Stage 3 (they will be hosted separately). The HTML files should reside on the file system within the previously created EBS volume and be served as the default document from the web server root<br>
+							•	The instance should use Security Groups effectively to allow administration and serve HTTP<br>
+
+
+							<h2>Stage 2: Configuring the Elastic Load Balancer</h2>
+							Create an Elastic-Load-Balancer (ELB) with the following specification:<br>
+							•	The ELB should be created in the Singapore region.<br>
+							•	The ELB should accept connections on ports 80<br>
+							•	The Healthy Threshold for the ELB to be set to 2<br>
+							•	Deliver traffic to the EC2 instances created in Stage 1 – i.e. both the Linux and Windows servers will be registered to this Elastic Load Balancer. Requests on load balancer would be load balanced on Linux & Windows servers. <br>
+
+
+
+							<h2>Stage 3: Configuring S3</h2>
+							Create a Simple Storage Service (S3) bucket with the following specification:<br>
+							•	The bucket should be created in the Singapore region.<br>
+							•	The bucket should be publicly readable.
+							<br><br>
+							Capture the screenshots for both Windows & Linux. Place the screen shots in S3 bucket in png format, clearly showing the following:<br>
+							1.	The mounted EBS volume e.g. using Windows Explorer on the Windows host or run "df" from the console on the Linux host. These screen shot should be named as screen-shot1 <br>
+							<br>
+							2.	The index.html file residing within the EBS e.g. using windows explorer or run "pwd; ls -l" from the terminal on a Linux host. This screen shot should be named as screen-shot2<br>
+							<br>
+							3.	The web server has been configured to serve index.html from the EBS volume as the default document e.g. the relevant section of the Apache configuration file and IIS Manager. This screen shot should be named as screen-shot3<br>
+							<br>
+							Remember to use the S3 URLs in the index.html file hosted on EC2 (see Stage 1). <br>
+							<br>
+							Optional: if you choose to extend the solution with CloudFront then use CloudFront URLs.<br>
+
+
+
+							<h2>Key Deliverables</h2>
+							Please provide the following information to the AWS Recruitment team:<br>
+							•	The public DNS entries for the EC2 instances<br>
+							•	The public URL to the web page via the ELB<br>
+							•	Your AWS account ID that is being used to set up this assignment<br>
+							<br>
+							P.S: Candidates are encouraged to be innovative in delivering the solution. Example use of bootstrap, auto scaling, or usage of orchestration tools like chef would be nice.<br>
+							<br>
+							Please Note: Ensure that you leave your solution up and running and available in order for it to be evaluated. This should occur within two business days of submitting your assignment. Upon receiving feedback from the Recruitment Team, you should terminate and delete all resources you used for the assignment so as to avoid any unnecessary charges.<br>
+					</div>
+				</div>
+			</main>
+			<div id="nav-id"></div> 
+		</div>
 	</body>
-  </html>
+</html>

@@ -9,38 +9,34 @@
 	</head>
 
 	<body onload="injectNav(13);">
-	  <div id="wrapper">
-	  <div style="background-color:#24292e; height:60px;">
-	  <img style="width:60px;padding-left:15px;" src="https://media.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAAypAAAAJGM4OTdjMGI2LTU5MDUtNDJkOS1iYWRlLWZlNmRhZWIyYTM2Yw.jpg"></img>
-	  <span class="headSpan">AWS Solution Architect's Journey</span>
-	  <div>
-		<main>
-		  <div id="content">
-			<div class="innertube">
-			  
-			  
-			  <br>
-			  <h2>Hello AWS World – running on <Server_Type> – on port 80</h2>
-					
-				<h3>Rolling deployment</h3>
-					<p style="margin-left:30px;">This rolls the EC2 instances behind the ELB by increasing the Server count to Max and reducing the Instance count back to Desired <br>
-					 Drawbacks in this approach is that for a small period of time the Website will show inconsistent behavior (i.e Versio 1 and Version 2) during the overlap <br>
-					 Since the ELB will route the requests to both the new and old servers<br>
-					 Termination polciies is set to OldLaunchConfigfirst (so that while reducing count the old instances are terminated)<br>
-					 <br>
-					 This is achieved using a AWS Lambda function <br>
-				 </p>
-					<h3>a. Design</h3>
-					<img style="width:45%;padding-left:15px;" src="http://images.e-zerve.com/site-images/common/bg.png"></img><br><br>
-					<h3>b. AWS Lambda </h3><br><br>
-					<a href="https://github.com/ameenibrahim/AWS-CF-ASG-WEBSERVER/blob/master/scripts/lambda-rolling-deploy-asg.js">Lambda Function - GITHUB</a><br><br>
-					<br><br>
+		<div id="wrapper">
+				<div style="background-color:#24292e; height:60px;">
+					<div style="padding-left:15px;float:left;"><img style="width:60px;" src="https://media.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAAypAAAAJGM4OTdjMGI2LTU5MDUtNDJkOS1iYWRlLWZlNmRhZWIyYTM2Yw.jpg"></div>
+					<div class="headSpan"> AWS Solution Architect's Journey </div>
+					<div style="padding-left:950px;float:left; padding-top:3px;"><img style="width:54px;" src="<Server_Type>.png"></div>
+				</div>
+				<main>
+					<div id="content">
+						<div class="innertube">
+							<br>
+							<h2>Hello AWS World – running on <Server_Type> – on port 80</h2>
+							<h3>Rolling deployment</h3>
+								<p style="margin-left:30px;">This rolls the EC2 instances behind the ELB by increasing the Server count to Max and reducing the Instance count back to Desired <br>
+									Drawbacks in this approach is that for a small period of time the Website will show inconsistent behavior (i.e Versio 1 and Version 2) during the overlap <br>
+									Since the ELB will route the requests to both the new and old servers<br>
+									Termination polciies is set to OldLaunchConfigfirst (so that while reducing count the old instances are terminated)<br>
+									<br>
+									This is achieved using a AWS Lambda function <br>
+								</p>
+								<h3>a. Design</h3>
+								<img style="width:45%;padding-left:15px;" src="http://images.e-zerve.com/site-images/common/bg.png"><br><br>
+								<h3>b. AWS Lambda </h3><br><br>
+								<a href="https://github.com/ameenibrahim/AWS-CF-ASG-WEBSERVER/blob/master/scripts/lambda-rolling-deploy-asg.js">Lambda Function - GITHUB</a><br><br>
+								<br><br>
+						</div>
+					</div>
+				</main>
+				<div id="nav-id"></div> 
 			</div>
-		  </div>
-		</main>
-		
-		<div id="nav-id"></div> 
-		
-	  </div>
 	</body>
-  </html>
+</html>
